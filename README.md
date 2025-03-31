@@ -1,4 +1,4 @@
-# Pokemon-Type-Chart-Tester
+# Pokemon Type Chart Tester
 A quick, daily puzzle style tests made to help improve my knowledge of Pokemon type chart interactions and to test / improve my skills with using HTML, CSS and Javascript. Has only been tested to work on PC so I currently have no idea if it works properly on mobile devices.
 
 ## How to Use
