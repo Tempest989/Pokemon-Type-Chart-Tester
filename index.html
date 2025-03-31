@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Pokemon Type Chart Tests</title>
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<div id="content" class="hidden">
+	<!--   class="hidden" to make anything hide without taking up space   -->
+		<h1 id="title"></h1>
+		<button onclick="toggleInstructions()" type="button">Instructions</button>
+		<p id="instructions" class="hidden"></p>
+		<div id="test-types"></div>
+		<select id="type-select-1" class="hidden">
+			<option value="normal">Normal</option>
+			<option value="fighting">Fighting</option>
+			<option value="flying">Flying</option>
+			<option value="poison">Poison</option>
+			<option value="ground">Ground</option>
+			<option value="rock">Rock</option>
+			<option value="bug">Bug</option>
+			<option value="ghost">Ghost</option>
+			<option value="steel">Steel</option>
+			<option value="fire">Fire</option>
+			<option value="water">Water</option>
+			<option value="grass">Grass</option>
+			<option value="electric">Electric</option>
+			<option value="psychic">Psychic</option>
+			<option value="ice">Ice</option>
+			<option value="dragon">Dragon</option>
+			<option value="dark">Dark</option>
+			<option value="fairy">Fairy</option>
+		</select>
+		<select id="type-select-2" class="hidden">
+			<option value="none" selected="selected">no secondary type</option>
+			<option value="normal">Normal</option>
+			<option value="fighting">Fighting</option>
+			<option value="flying">Flying</option>
+			<option value="poison">Poison</option>
+			<option value="ground">Ground</option>
+			<option value="rock">Rock</option>
+			<option value="bug">Bug</option>
+			<option value="ghost">Ghost</option>
+			<option value="steel">Steel</option>
+			<option value="fire">Fire</option>
+			<option value="water">Water</option>
+			<option value="grass">Grass</option>
+			<option value="electric">Electric</option>
+			<option value="psychic">Psychic</option>
+			<option value="ice">Ice</option>
+			<option value="dragon">Dragon</option>
+			<option value="dark">Dark</option>
+			<option value="fairy">Fairy</option>
+		</select>
+		<p id="score"></p>
+		<div id="answer" class="hidden"></div>
+		<button id="submit" type="button" onclick="submitAnswer()">Submit Answer</button>
+		<button id="next" type="button" class="hidden" onclick="nextQuestion()">Next Question</button>
+		<table id="type-chart-table">
+			<tbody>
+				<tr>
+					<th rowspan=2>Super Effective</th>
+					<th class="dual-types">x4</th>
+					<td id="x4-types" class="dropzone dual-types">Example types</td>
+				</tr>
+				<tr>
+					<th>x2</th>
+					<td id="x2-types" class="dropzone"> example types</td>
+				</tr>
+				<tr>
+					<th>Neutral</th>
+					<th>x1</th>
+					<td id="x1-types" class="dropzone">types</td>
+				</tr>
+				<tr>
+					<th rowspan=2>Not Very Effective</th>
+					<th>x0.5</th>
+					<td id="x0.5-types" class="dropzone">Example types</td>
+				</tr>
+				<tr>
+					<th class="dual-types">x0.25</th>
+					<td id="x0.25-types" class="dropzone dual-types"> example types</td>
+				</tr>
+				<tr>
+					<th>Immunity</th>
+					<th>x0</th>
+					<td id="x0-types" class="dropzone">negates</td>
+				</tr>
+			</tbody>
+		</table>
+		<table id="answer-table" class="hidden">
+			<tbody>
+				<tr>
+					<th rowspan=2>Super Effective</th>
+					<th>x4</th>
+					<td id="x4-types-a">Example types</td>
+				</tr>
+				<tr>
+					<th>x2</th>
+					<td id="x2-types-a"> example types</td>
+				</tr>
+				<tr>
+					<th>Neutral</th>
+					<th>x1</th>
+					<td id="x1-types-a">types</td>
+				</tr>
+				<tr>
+					<th rowspan=2>Not Very Effective</th>
+					<th>x0.5</th>
+					<td id="x0.5-types-a">Example types</td>
+				</tr>
+				<tr>
+					<th>x0.25</th>
+					<td id="x0.25-types-a"> example types</td>
+				</tr>
+				<tr>
+					<th>Immunity</th>
+					<th>x0</th>
+					<td id="x0-types-a">negates</td>
+				</tr>
+			</tbody>
+		</table>
+		
+	<!--     <div class="type fire">Fire</div>
+		<div class="type psychic">Psychic</div>
+		<div class="type grass">Grass</div>
+		<div class="type water">Water</div>
+		<div class="type electric">Electric</div>
+		<div class="type ground">Ground</div>
+		<div class="type rock">Rock</div>
+		<div class="type dark">Dark</div>
+		<div class="type steel">Steel</div>
+		<div class="type bug">Bug</div>
+		<div class="type flying">Flying</div>
+		<div class="type normal">Normal</div>
+		<div class="type fighting">Fighting</div>
+		<div class="type ghost">Ghost</div>
+		<div class="type dragon">Dragon</div>
+		<div class="type fairy">Fairy</div>
+		<div class="type poison">Poison</div>
+		<div class="type ice">Ice</div> -->
+	</div>
+	<div id="content-attack" class="hidden">
+		<p id="score-attack"></p>
+		<div id="answer-attack" class="hidden"></div>
+		<p>attack</p>
+		<select id="attack-type" class="hidden">
+			<option value="normal">Normal</option>
+			<option value="fighting">Fighting</option>
+			<option value="flying">Flying</option>
+			<option value="poison">Poison</option>
+			<option value="ground">Ground</option>
+			<option value="rock">Rock</option>
+			<option value="bug">Bug</option>
+			<option value="ghost">Ghost</option>
+			<option value="steel">Steel</option>
+			<option value="fire">Fire</option>
+			<option value="water">Water</option>
+			<option value="grass">Grass</option>
+			<option value="electric">Electric</option>
+			<option value="psychic">Psychic</option>
+			<option value="ice">Ice</option>
+			<option value="dragon">Dragon</option>
+			<option value="dark">Dark</option>
+			<option value="fairy">Fairy</option>
+		</select>
+		<div id="attack-type-output"></div>
+		<p>defense</p>
+		<div class="hidden">
+			<select id="defense-type-1">
+				<option value="normal">Normal</option>
+				<option value="fighting">Fighting</option>
+				<option value="flying">Flying</option>
+				<option value="poison">Poison</option>
+				<option value="ground">Ground</option>
+				<option value="rock">Rock</option>
+				<option value="bug">Bug</option>
+				<option value="ghost">Ghost</option>
+				<option value="steel">Steel</option>
+				<option value="fire">Fire</option>
+				<option value="water">Water</option>
+				<option value="grass">Grass</option>
+				<option value="electric">Electric</option>
+				<option value="psychic">Psychic</option>
+				<option value="ice">Ice</option>
+				<option value="dragon">Dragon</option>
+				<option value="dark">Dark</option>
+				<option value="fairy">Fairy</option>
+			</select>
+			<select id="defense-type-2">
+				<option value="none">No Secondary Typing</option>
+				<option value="normal">Normal</option>
+				<option value="fighting">Fighting</option>
+				<option value="flying">Flying</option>
+				<option value="poison">Poison</option>
+				<option value="ground">Ground</option>
+				<option value="rock">Rock</option>
+				<option value="bug">Bug</option>
+				<option value="ghost">Ghost</option>
+				<option value="steel">Steel</option>
+				<option value="fire">Fire</option>
+				<option value="water">Water</option>
+				<option value="grass">Grass</option>
+				<option value="electric">Electric</option>
+				<option value="psychic">Psychic</option>
+				<option value="ice">Ice</option>
+				<option value="dragon">Dragon</option>
+				<option value="dark">Dark</option>
+				<option value="fairy">Fairy</option>
+			</select>
+		</div>
+		<div id="defense-types-output"></div>
+		<p>effectiveness</p>
+		<select id="effectiveness" class="hidden">
+			<option value=4>Super Effective (x4)</option>
+			<option value=2>Super Effective (x2)</option>
+			<option value=1>Neutral (x1)</option>
+			<option value=0.5>Not Very Effective (x0.5)</option>
+			<option value=0.25>Not Very Effective (x0.25)</option>
+			<option value=0>No Effect (x0)</option>
+		</select>
+		<p id="effectiveness-output"></p>
+		<button id="submit-attack" type="button" onclick="submitAttackAnswer()">Submit Answer</button>
+		<button id="next-attack" type="button" class="hidden" onclick="nextAttackQuestion()">Next Question</button>
+	</div>
+	<button id="play-choose-test" onclick="playTypeChartTester()" type="button">Play Type Chart Tester</button>
+	<button id="play-attack-test" onclick="playAttackTester()" type="button">Play Attack Interation Tester</button>
+	<button id="attack-type-test" class="hidden" onclick="attackTypeTest()" type="button">Play Attack Type Test</button>
+	<button id="defense-type-test" class="hidden" onclick="defenseTypeTest()" type="button">Play Defense Type Test</button>
+	<button id="effectiveness-type-test" class="hidden" onclick="effectivenessTest()" type="button">Play Effectiveness Test</button>
+	<button id="mixed-attack-test" class="hidden" onclick="mixedAttackTest()" type="button">Play Mixed Test</button>
+	<button id="normal-test" class="hidden" onclick="normalTypeChartTest()" type="button">Play Normal Test</button>
+	<button id="reverse-test" class="hidden" onclick="reverseTypeChartTest()" type="button">Play Reverse Test</button>
+	<button id="mixed-test" class="hidden" onclick="mixedTypeChartTest()" type="button">Play Mixed Test</button>
+	<button id="back-menu" class="hidden" onclick="backMenu()" type="button">Back To Menu</button>
+	<script src="scripts.js"></script>
+</body>
+</html>

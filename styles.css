@@ -1,0 +1,142 @@
+#type-chart-table {
+	display: relative;
+	/*   display: none; */
+	border: 1px solid black;
+
+}
+
+th {
+	border: 5px solid red;
+}
+
+td {
+	border: 5px solid blue;
+	padding: 2.5px;
+}
+
+.type {
+	display: inline-block;
+	border: 5px solid black;
+	border-radius: 10px;
+	color: white;
+	text-transform: capitalize;
+}
+
+.fire {
+	border-color: red;
+	background-color: red;
+}
+
+.psychic {
+	border-color: deeppink;
+	background-color: deeppink;
+}
+
+.grass {
+	border-color: green;
+	background-color: green;
+}
+
+.water {
+	border-color: blue;
+	background-color: blue;
+}
+
+.electric {
+	border-color: yellow;
+	background-color: yellow;
+}
+
+.ground {
+	border-color: chocolate;
+	background-color: chocolate;
+}
+
+.rock {
+	border-color: burlywood;
+	background-color: burlywood;
+}
+
+.dark {
+	border-color: black;
+	background-color: black;
+}
+
+.steel {
+	border-color: silver;
+	background-color: silver;
+}
+
+.bug {
+	border-color: greenyellow;
+	background-color: greenyellow;
+}
+
+.flying {
+	border-color: deepskyblue;
+	background-color: deepskyblue;
+}
+
+.normal {
+	border-color: gray;
+	background-color: gray;
+}
+
+.fighting {
+	border-color: firebrick;
+	background-color: firebrick;
+}
+
+.ghost {
+	border-color: indigo;
+	background-color: indigo;
+}
+
+.dragon {
+	border-color: darkslateblue;
+	background-color: darkslateblue;
+}
+
+.fairy {
+	border-color: violet;
+	background-color: violet;
+}
+
+.poison {
+	border-color: indigo;
+	background-color: indigo;
+}
+
+.ice {
+	border-color: cyan;
+	background-color: cyan;
+}
+
+.dragging {
+	opacity: 0.5;
+}
+
+.dragover {
+	background-color: black;
+}
+
+/* .dropzone {
+	z-index: -10;
+} */
+
+.dual-types, 
+.hidden {
+	display: none;
+}
+
+.correct {
+	background-color: green;
+}
+
+.incorrect {
+	background-color: red;
+}
+
+.half-correct {
+	background-color: orange;
+}
